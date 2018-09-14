@@ -1,0 +1,61 @@
+  input[type=text]
+        {
+            width : 60px;
+            height : 60px;
+            margin : 5%;
+        }
+        
+        button
+        {
+            margin-left:25%;
+            margin-bottom:5%;
+            width:100px;
+            height:40px;
+            border:2px solid #A28613;
+            border-radius: 5px;
+            background-color: #D2AC15;
+            box-shadow: 2px 2px #E6C43A;
+            color:white;
+        }
+        h1
+        {
+            font-size:30px;
+            color:blue;
+            font-family:TIMES NEW ROMAN;
+            font-weight: bold;
+        }
+        p
+        {
+            background-color: white;
+            padding-top:10%;
+            padding-left: 2%;
+            font-size:25px;
+            color:#D61DDF;
+            font-family:TIMES NEW ROMAN;
+        }
+        .ip
+        {
+            padding:4%; 
+            border-radius: 4px;
+        }
+        .rest
+        {
+            font-family:TIMES NEW ROMAN;
+            color:#D61DDF;
+            font-size:20px;
+            background-color: white;
+            padding-top:10%;
+            padding-left: 2%;
+        }
+
+        input 
+        {
+             color: transparent;
+             text-shadow: 0 0 0 #2196f3;
+             font-weight: bold;
+             font-size: 20px;
+            &:focus 
+            {
+                outline: none;
+            }
+        }

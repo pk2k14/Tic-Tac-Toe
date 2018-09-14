@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+            <title>TIC-TACT-TOE</title>
+
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="tictactoe.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+    <script>
+
+
+        function inputs_text(text)
+        {
+            var ch,e;
+            
+                if(f==0)
+                {
+                    $(text).css({"color":"transparent","text-shadow":"0 0 0 #2196f3"}); 
+                    $(text).val("X");
+                    ch = 'X';
+                    f=1;
+                }
+                else
+                {
+                    $(text).css({"color":"transparent","text-shadow":"0 0 0 #D61DDF"})
+                    $(text).val("O");
+                    ch = 'O';
+                    f=0;   
+                }   
+            return ch;
+        }
+        function checks()
+        {
+            if( (ar11==ar12 && ar11==ar13) || (ar11==ar21 && ar11 ==ar31) || (ar11==ar22 && ar11 ==ar33) )
+                {
+                    if(ar11=='X')
+                        $("p").append("PLAYER1 WINS !! <br> Double Click 'Reset' button to start a new game.");
+                    else if(ar11=='O')
+                        $("p").append("PLAYER2 WINS !! <br> Double Click 'Reset' button to start a new game.");
+                    
+                }
+            else if( (ar21==ar22 && ar22==ar23) || (ar12==ar22 && ar22==ar32) || (ar13==ar22 && ar22==ar31) )
+                {
+                    if(ar22=='X')
+                        $("p").append("PLAYER1 WINS !! <br> Double Click 'Reset' button to start a new game.");
+                    else if(ar22=='O')
+                        $("p").append("PLAYER2 WINS !! <br> Double Click 'Reset' button to start a new game.");
+                    
+                }
+            else if( (ar31==ar32 && ar31==ar33) || (ar13==ar23 && ar23==ar33) )
+                {
+                    if(ar33=='X')
+                        $("p").append("PLAYER1 WINS !! <br> Double Click 'Reset' button to start a new game.");
+                    else if(ar33=='O')
+                        $("p").append("PLAYER2 WINS !! <br> Double Click 'Reset' button to start a new game.");
+                    
+                } 
+            else if( (ar11=='X' || ar11=='O' ) && (ar12=='X' || ar12=='O' ) && (ar13=='X' || ar13=='O' ) && (ar21=='X' || ar21=='O' ) && 
+                        (ar22=='X' || ar22=='O' ) && (ar23=='X' || ar23=='O' ) && (ar31=='X' || ar31=='O' ) && (ar32=='X' || ar32=='O' ) 
+                        && (ar33=='X' || ar33=='O' ) )
+                {
+                        $("p").append("Game Drawn  !! <br> Double Click 'Reset' button to start a new game.");
+                }
+        }
+        var ar11,ar12,ar13;
+        var ar21,ar22,ar23;
+        var ar31,ar32,ar33;
+        var f,c;
+        
+        f=0;
+        ar11='a' ; ar12='b' ; ar13='c' ; ar21='d' ; ar22='e' ; ar23='f' ; ar31='g' ; ar32='h' ; ar33='i';
+
+        
+        $(document).ready(function()
+        {
+            $("#one").click(function()
+            {
+                if(ar11!="X" && ar11!="O")
+                {    
+                    c=inputs_text("#one");
+                    ar11=c;
+                    checks();
+                }      
+            });
+            $("#two").click(function()
+            {
+                if(ar12!="X" && ar12!="O")
+                {  
+                    c=inputs_text("#two");
+                    ar12=c;
+                    checks();
+                }
+            });
+            $("#three").click(function()
+            {
+                if(ar13!="X" && ar13!="O")
+                { 
+                    c=inputs_text("#three");
+                    ar13=c;
+                    checks();
+                }
+            });
+            $("#four").click(function()
+            {
+                if(ar21!="X" && ar21!="O")
+                {
+                    c=inputs_text("#four");
+                    ar21=c;
+                    checks();
+                } 
+            });
+            $("#five").click(function()
+            {
+                if(ar22!="X" && ar22!="O")
+                {
+                    c=inputs_text("#five");
+                    ar22=c;
+                    checks();
+                }
+            });
+            $("#six").click(function()
+            {
+                if(ar23!="X" && ar23!="O")
+                {
+                    c=inputs_text("#six");
+                    ar23=c;
+                    checks();
+                }
+            });
+            $("#seven").click(function()
+            {
+                if(ar31!="X" && ar31!="O")
+                {
+                    c=inputs_text("#seven");
+                    ar31=c;
+                    checks();
+                }
+            });
+            $("#eight").click(function()
+            {
+                if(ar32!="X" && ar32!="O")
+                {
+                    c=inputs_text("#eight");
+                    ar32=c;
+                    checks();
+                }
+            });
+            $("#nine").click(function()
+            {
+                if(ar33!="X" && ar33!="O")
+                {
+                    c=inputs_text("#nine");
+                    ar33=c;
+                    checks();
+                }    
+            });
+            $("#reset").dblclick(function()
+            {
+                $("p").text("");
+                $("#one").val("");
+                $("#two").val("");
+                $("#three").val("");
+                $("#four").val("");
+                $("#five").val("");
+                $("#six").val("");
+                $("#seven").val("");
+                $("#eight").val("");
+                $("#nine").val("");
+                ar11='a' ; ar12='b' ; ar13='c' ; ar21='d' ; ar22='e' ; ar23='f' ; ar31='g' ; ar32='h' ; ar33='i';
+                f=0;
+            });
+        }); 
+    </script>   
+</head>
+
+<body>
+    <h1 align="center">Play This Game With Your Friend !</h1>
+    
+
+<div class="container-fluid">
+    
+    <div class="row">
+   
+    <div class="col-lg-3 rest">
+        <ul>
+            <li>Player1 will have 'X'</li>
+            <li>Player2 will have 'O'</li>
+            <li>Click on the boxes to start playing.</li>
+            <li>Player1 will start</li>
+            <li>Enjoy!!</li>
+        </ul>
+    </div>
+
+    <div class="col-lg-6" style="border : 2px solid #FCD63E;border-radius: 5px;width :50%;
+        padding-left:12%;background-image:url('back.jpg');background-repeat: no-repeat;">
+        <input type="text" class="ip" id="one" value="" name=""> <input type="text" class="ip" id="two" value="" name=""> <input type="text" class="ip" id="three" value="" name=""><br><br>
+        <input type="text" class="ip" id="four" value="" name=""> <input type="text" class="ip" id="five" value="" name=""> <input type="text" class="ip" id="six" value="" name=""><br><br>
+        <input type="text" class="ip" id="seven" value="" name=""> <input type="text" class="ip" id="eight" value="" name=""> <input type="text" class="ip" id="nine" value="" name=""><br><br>
+        <button id="reset">RESET</button>
+    </div>
+
+    <div class="col-lg-3 rest">
+        <p></p>
+    </div>
+    
+    </div>
+
+</div>
+
+</body>
+</html>
