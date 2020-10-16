@@ -59,3 +59,11 @@
                 outline: none;
             }
         }
+        .freeTshirts{
+          display:none;
+          color:purple;
+          font-size:5rem;
+        }
+        #target{
+          color:black;
+        }
