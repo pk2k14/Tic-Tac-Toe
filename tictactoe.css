@@ -23,6 +23,7 @@
             color:blue;
             font-family:TIMES NEW ROMAN;
             font-weight: bold;
+            font-weight: italic;
         }
         p
         {
@@ -35,8 +36,8 @@
         }
         .ip
         {
-            padding:4%; 
-            border-radius: 4px;
+            padding:6%; 
+            border-radius: 2.5px;
         }
         .rest
         {
